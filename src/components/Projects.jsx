@@ -1,78 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap'
-import './Projects.css'
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import "./Projects.css";
 
 function Projects() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
-    )
+      { threshold: 0.1 },
+    );
 
-    const section = document.querySelector('#projects')
-    if (section) observer.observe(section)
+    const section = document.querySelector("#projects");
+    if (section) observer.observe(section);
 
     return () => {
-      if (section) observer.unobserve(section)
-    }
-  }, [])
+      if (section) observer.unobserve(section);
+    };
+  }, []);
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Dashboard',
-      description: 'A fully responsive e-commerce admin dashboard built with React and Bootstrap.',
-      image: '🛒',
-      tags: ['React', 'Bootstrap', 'Responsive'],
-      link: '#',
+      title: "Secure Full-Stack API Platform",
+      description:
+        "A Node.js and Express proof of concept using MVC architecture, Okta and JWT authentication, RBAC, strict request validation, and Azure monitoring.",
+      image: "API",
+      tags: ["Node.js", "Express", "Azure", "Security"],
+      link: "#",
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'Interactive task manager with real-time updates and state management using React Hooks.',
-      image: '✓',
-      tags: ['React', 'Hooks', 'UI/UX'],
-      link: '#',
+      title: "Reusable React Component Library",
+      description:
+        "A centralized library of 50+ modular React components that standardized UI consistency across three internal product teams.",
+      image: "UI",
+      tags: ["React", "TypeScript", "Components"],
+      link: "#",
     },
     {
       id: 3,
-      title: 'Weather Forecast App',
-      description: 'Beautiful weather application with API integration and smooth animations.',
-      image: '🌤️',
-      tags: ['React', 'API', 'Animations'],
-      link: '#',
+      title: "Azure Workflow Automation",
+      description:
+        "Integrated React applications with Azure Logic Apps, Dataverse, SharePoint, Power Automate, and secure Azure services to streamline business workflows.",
+      image: "AZ",
+      tags: ["Azure", "Power Automate", "Dataverse"],
+      link: "#",
     },
-    {
-      id: 4,
-      title: 'Social Media Feed',
-      description: 'Responsive social media feed with interactive components and Bootstrap styling.',
-      image: '💬',
-      tags: ['React', 'Bootstrap', 'Components'],
-      link: '#',
-    },
-    {
-      id: 5,
-      title: 'Portfolio Website',
-      description: 'Modern portfolio website showcasing projects and skills with smooth animations.',
-      image: '🎨',
-      tags: ['React', 'Vite', 'Design'],
-      link: '#',
-    },
-    {
-      id: 6,
-      title: 'Blog Platform',
-      description: 'Content management platform with markdown support and responsive layout.',
-      image: '📝',
-      tags: ['React', 'Markdown', 'CMS'],
-      link: '#',
-    },
-  ]
+  ];
 
   return (
     <section id="projects" className="projects-section section-spacing">
@@ -85,8 +64,8 @@ function Projects() {
         <Row>
           {projects.map((project, idx) => (
             <Col lg={4} md={6} key={project.id} className="mb-4">
-              <div 
-                className={`project-card ${isVisible ? 'animate-fade-in-up' : ''}`}
+              <div
+                className={`project-card ${isVisible ? "animate-fade-in-up" : ""}`}
                 style={{ animationDelay: `${idx * 0.15}s` }}
               >
                 <div className="project-image">
@@ -102,7 +81,9 @@ function Projects() {
                   <p className="project-description">{project.description}</p>
                   <div className="project-tags">
                     {project.tags.map((tag, i) => (
-                      <span key={i} className="tag">{tag}</span>
+                      <span key={i} className="tag">
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -118,7 +99,7 @@ function Projects() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

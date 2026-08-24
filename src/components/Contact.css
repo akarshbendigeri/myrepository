@@ -1,5 +1,5 @@
 .contact-section {
-  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  background: #181C14;
 }
 
 /* Contact Info */
@@ -58,24 +58,26 @@
 .social-link {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: white;
-  color: var(--primary-color);
+  background: #ECDFCC;
+  color: #000;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid var(--primary-color);
+  border: 2px solid #ECDFCC;
+  ;
 }
 
 .social-link:hover {
-  background: var(--primary-color);
-  color: white;
+  background: #ECDFCC;
+  ;
+  color: #000;
   transform: translateY(-2px);
 }
 
 /* Contact Form */
 .contact-form {
-  background: white;
+  background: #3C3D37;
   padding: 2.5rem;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -94,7 +96,9 @@
 
 .form-group input,
 .form-group textarea {
-  border: 2px solid rgba(102, 126, 234, 0.2);
+  background: #3C3D37;
+  color: #fff;
+  border: 2px solid #626262;
   border-radius: 8px;
   padding: 0.75rem 1rem;
   font-family: inherit;
@@ -104,8 +108,10 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #626262;
+  background: #3c3d37;
+  color: #fff;
+  box-shadow: 0 0 2px 4px rgb(240 240 240 / 10%);
   outline: none;
 }
 
@@ -130,15 +136,15 @@
 }
 
 .alert-success {
-  background-color: #d4edda;
+  background-color: #3C3D37;
   border-color: #28a745;
-  color: #155724;
+  color: #2f578a;
 }
 
 .alert-danger {
-  background-color: #f8d7da;
+  background-color: #3C3D37;
   border-color: #dc3545;
-  color: #721c24;
+  color: #2f578a;
 }
 
 /* Responsive */

@@ -5,17 +5,19 @@
 }
 
 :root {
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
-  --text-dark: #2d3748;
-  --text-light: #718096;
-  --bg-light: #f7fafc;
-  --white: #ffffff;
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --text-dark: #fff;
+  --text-light: #fff;
+  --bg-light: #181C14;
+  --white: #fff;
+  --background-color: #000;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--text-dark);
+  color: #2f578a;
+  background-color: #000;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -26,14 +28,13 @@ html {
 
 /* Utility Classes */
 .text-primary {
-  color: var(--primary-color);
+  color: #ECDFCC;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
+  background: none;
+  -webkit-text-fill-color: #fff;
 }
 
 .section-spacing {

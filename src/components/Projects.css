@@ -1,11 +1,11 @@
 .projects-section {
-  background: white;
+  background: #181C14;
   position: relative;
 }
 
 /* Project Cards */
 .project-card {
-  background: white;
+  background: #3C3D37;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -26,7 +26,7 @@
 
 .project-image {
   height: 200px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  background: #3C3D37;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,8 +83,8 @@
 
 .tag {
   display: inline-block;
-  background: rgba(102, 126, 234, 0.1);
-  color: var(--primary-color);
+  background: #ECDFCC;
+  color: #000;
   padding: 0.35rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -92,7 +92,7 @@
 }
 
 .tag:hover {
-  background: rgba(102, 126, 234, 0.2);
+  background: #ECDFCC;
   transform: translateY(-2px);
 }
 
