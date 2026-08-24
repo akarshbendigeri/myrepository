@@ -1,5 +1,5 @@
 .navbar-custom {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95));
+  background: #1d1d1d;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
@@ -14,7 +14,7 @@
 .navbar-custom .nav-link {
   margin-left: 2rem;
   font-weight: 600;
-  color: white !important;
+  color: #fff !important;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -26,7 +26,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: white;
+  background: #fff;
   transition: width 0.3s ease;
 }
 

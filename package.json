@@ -6,19 +6,26 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
-    "aos": "^2.3.4"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2",
     "vite": "^5.4.2"
   }
 }
