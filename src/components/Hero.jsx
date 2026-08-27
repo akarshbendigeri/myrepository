@@ -12,7 +12,26 @@ function Hero() {
   return (
     <section id="home" className="hero-section">
       <Container className="h-100">
-        <Row className="h-100 align-items-center">
+        <div className="text-center">
+          <p className="hero-subtitle">Software Engineer III</p>
+          <h1 className="hero-title">
+            Akarsh <span className="gradient-text">Bendigeri</span>
+          </h1>
+          <p className="hero-description">
+            Building scalable, high-performance web applications with React JS,
+            Microsoft Azure, and secure API integrations.
+          </p>
+          <div className="hero-cta">
+            <Button href="#projects" className="me-3 view_my_work" size="lg">
+              View My Work
+            </Button>
+            <Button href="#contact" variant="outline-primary" size="lg">
+              Get In Touch
+            </Button>
+          </div>
+        </div>
+
+        {/* <Row className="h-100 align-items-center">
           <Col
             lg={6}
             className={`hero-content ${isVisible ? "animate-slide-in-left" : ""}`}
@@ -47,7 +66,7 @@ function Hero() {
               </div>
             </div>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
 
       {/* Animated background elements */}

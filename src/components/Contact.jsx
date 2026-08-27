@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 function Contact() {
@@ -12,6 +13,7 @@ function Contact() {
 
   const [isVisible, setIsVisible] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,7 +41,7 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Basic validation
@@ -60,20 +62,45 @@ function Contact() {
       return;
     }
 
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    setSubmitStatus("success");
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitStatus("configuration-error");
+      return;
+    }
 
-    // Clear status after 3 seconds
-    setTimeout(() => setSubmitStatus(""), 3000);
+    setIsSubmitting(true);
+    setSubmitStatus("");
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "nikhiakarsh@gmail.com",
+        },
+        publicKey,
+      );
+
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS submission failed:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -105,7 +132,7 @@ function Contact() {
                   <div className="contact-icon">📍</div>
                   <div className="contact-item-content">
                     <h4>Location</h4>
-                    <p>India</p>
+                    <p>Banglore, India</p>
                   </div>
                 </div>
 
@@ -185,18 +212,28 @@ function Contact() {
 
               {submitStatus === "success" && (
                 <div className="alert alert-success" role="alert">
-                  ✓ Message sent successfully! I'll get back to you soon.
+                  ✓ Message sent successfully. I will get back to you soon.
                 </div>
               )}
 
               {submitStatus === "error" && (
                 <div className="alert alert-danger" role="alert">
-                  ✗ Please fill all fields correctly.
+                  ✗ Message could not be sent. Please try again.
                 </div>
               )}
 
-              <Button type="submit" className="btn-primary w-100">
-                Send Message
+              {submitStatus === "configuration-error" && (
+                <div className="alert alert-danger" role="alert">
+                  ✗ Email service is not configured yet.
+                </div>
+              )}
+
+              <Button
+                type="submit"
+                className="btn-primary w-100"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Col>

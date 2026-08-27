@@ -33,16 +33,31 @@ function About() {
 
         <Row className="align-items-center gap-4">
           <Col lg={5} className={isVisible ? "animate-slide-in-left" : ""}>
-            <div className="about-image-wrapper">
+            <div className="about-highlights">
+              <div className="highlight-item">
+                <h4>5+</h4>
+                <p>Years Experience</p>
+              </div>
+              <div className="highlight-item">
+                <h4>50+</h4>
+                <p>Reusable Components</p>
+              </div>
+              <div className="highlight-item">
+                <h4>70%</h4>
+                <p>Latency Improvement</p>
+              </div>
+            </div>
+
+            {/* <div className="about-image-wrapper">
               <div className="about-image">
                 <div className="image-placeholder">📱</div>
               </div>
-            </div>
+            </div> */}
           </Col>
 
           <Col lg={6} className={isVisible ? "animate-slide-in-right" : ""}>
             <div className="about-content">
-              <h3 className="about-subtitle">Software Engineer III</h3>
+              {/* <h3 className="about-subtitle">Software Engineer III</h3> */}
               <p className="about-text">
                 I am a software engineer with 5+ years of experience building
                 scalable, high-performance web applications with React.js and
@@ -64,19 +79,18 @@ function About() {
                 improve application latency by 70%, and help teams ship secure,
                 maintainable software. Previously, at Ultimez, I built
                 responsive React and Ionic applications, optimized Lighthouse
-                performance, and supported collaborative delivery with Git and
-                GitHub.
+                performance.
               </p>
 
-              <p className="about-text">
+              {/* <p className="about-text">
                 Certified in Microsoft Azure Fundamentals (AZ-900) and Power
                 Apps Fundamentals (PL-900), I hold a Master of Computer
                 Applications from New Horizon College of Engineering and a
                 Bachelor of Computer Applications from Rukmini Shetty Memorial
                 College.
-              </p>
+              </p> */}
 
-              <div className="about-highlights">
+              {/* <div className="about-highlights">
                 <div className="highlight-item">
                   <h4>5+</h4>
                   <p>Years Experience</p>
@@ -89,7 +103,7 @@ function About() {
                   <h4>70%</h4>
                   <p>Latency Improvement</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

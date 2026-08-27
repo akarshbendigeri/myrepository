@@ -26,36 +26,22 @@ function Skills() {
   const skillCategories = [
     {
       name: "Frontend",
-      skills: [
-        "React.js",
-        "Redux",
-        "JavaScript",
-        "TypeScript",
-        "HTML5/CSS3",
-        "React Router",
-      ],
+      skills: ["HTML", "CSS", "JavaScript", "React JS", "Redux"],
     },
     {
       name: "Backend & Cloud",
       skills: [
-        "Node.js",
-        "Express",
+        "Node JS - Express",
         "REST APIs",
         "SQL Queries",
-        "Microsoft Azure",
+        "Azure Logic Apps",
         "Azure APIM",
+        "Dataverse",
       ],
     },
     {
       name: "Security & Automation",
-      skills: [
-        "Okta",
-        "JWT",
-        "RBAC",
-        "Power Automate",
-        "Dataverse",
-        "Azure Key Vault",
-      ],
+      skills: ["Okta OAuth", "RBAC", "Power Automate"],
     },
   ];
 
